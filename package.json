@@ -16,7 +16,8 @@
   "homepage": "https://github.com/dfischer/firebase-functions-router",
   "scripts": {
     "test": "mocha -r ts-node/register src/**/*.spec.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "prepublish": "npm run build"
   },
   "devDependencies": {
     "typescript": "^2.8.3",
