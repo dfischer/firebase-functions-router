@@ -225,7 +225,7 @@ describe('Creating a Router Controller', () => {
 describe('Creating a Middleware', () => {
   it('should return 200 with a GET middleware for auth', async () => {
     const AuthMiddleware = async router => {
-      return {
+      return await {
         req: {
           ...router.req,
           auth: 'dan',
