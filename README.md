@@ -9,9 +9,7 @@ Router controller pattern to use with firebase functions or anything else that n
 Firebase https onRequest handler
 
 ```typescript
-export const HelloRouter = functions.https.onRequest(async (req, res): Promise<
-  functions.Response
-> => {
+export const HelloRouter = functions.https.onRequest(async (req, res) => {
   try {
     return await MyRouter(req, res);
   } catch (e) {
