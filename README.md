@@ -57,7 +57,7 @@ const FooMiddleware = async router => {
   return await {
     req: {
       ...router.req,
-      foo: await getFoo();
+      foo: await getFoo(); // async func that returns 'bar'
     },
     res: router.res,
   };
