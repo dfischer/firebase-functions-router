@@ -6,22 +6,22 @@ Router controller pattern to use with firebase functions or anything else that n
 
 Firebase https onRequest handler
 
-```
-export const HelloRouter = functions.https.onRequest(
-  async (req, res): Promise<functions.Response> => {
-    try {
-      return await MyRouter(req, res);
-    } catch (e) {
-      console.error(e);
-      return res.sendStatus(500);
-    }
-  },
-);
+```typescript
+export const HelloRouter = functions.https.onRequest(async (req, res): Promise<
+  functions.Response
+> => {
+  try {
+    return await MyRouter(req, res);
+  } catch (e) {
+    console.error(e);
+    return res.sendStatus(500);
+  }
+});
 ```
 
 and then you'd have a `HelloRouter` somewhere in your application like so:
 
-```
+```typescript
 const HelloRouter = async (req, res) => {
   return await Router({
     req,
@@ -41,7 +41,7 @@ If you want to do something fancy between the request cycle and when the router 
 
 The Router takes middleware options like so:
 
-```
+```typescript
 const AuthMiddleware = async router => {
   return {
     req: {
