@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/dfischer/firebase-functions-router.svg?branch=master)](https://travis-ci.org/dfischer/firebase-functions-router)
+
 # firebase-functions-router
 
 Router controller pattern to use with firebase functions or anything else that needs a generic interface to express-like `req, res` expectations.
