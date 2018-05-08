@@ -44,21 +44,22 @@ If you want to do something fancy between the request cycle and when the router 
 The Router takes middleware options like so:
 
 ```typescript
+// imagine async stuff
 const AuthMiddleware = async router => {
-  return {
+  return await {
     req: {
       ...router.req,
-      auth: 'dan',
+      auth: await getUser('dan')
     },
     res: router.res,
   };
 };
 
 const FooMiddleware = async router => {
-  return {
+  return await {
     req: {
       ...router.req,
-      foo: 'bar',
+      foo: await getFoo();
     },
     res: router.res,
   };
